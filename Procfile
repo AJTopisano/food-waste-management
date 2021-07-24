@@ -1,1 +1,1 @@
-web: gunicorn foodwastemanagement.wsgi --log-file -
+web: gunicorn impuploader.wsgi --log-file -
