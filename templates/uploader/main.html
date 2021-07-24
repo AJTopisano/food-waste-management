@@ -1,0 +1,68 @@
+{% extends 'uploader/index.html' %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+
+<section >
+    <div class="container mt-3">
+        <div class = "row justify-content-center">
+            {% if user.is_authenticated %}
+            <div class="float-right">
+                <a href="{% url 'addpost' %}" class = "btn btn-primary float-right" >Add Post</a>
+            </div>
+            {% endif %}
+            <div class = "col-md-8">
+                {% for msg in messages %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Hey! </strong>{{msg}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endfor %}
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class = "text-center">Available Resources</h2>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Discription</th>
+                                    <th>Location</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for post in form %}
+                                    <tr>
+                                        <td>{{post.name}}</td>
+                                        <td>{{post.category}}</td>
+                                        <td>{{post.description}}</td>
+                                        <td>{{post.location}}</td>
+                                        
+                                        
+                                        <td>
+                                            <a href="{% url 'viewpost' post.id %}" class="btn btn-sm btn-primary">View</a>
+                                            {% if user.is_authenticated %}
+                                                {% if user.username == post.authname %}
+                                                    
+                                                    <a href="{% url 'delete' post.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

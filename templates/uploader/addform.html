@@ -1,0 +1,30 @@
+{% extends 'uploader/index.html' %}
+{% block title %}
+    Home
+{% endblock title %}
+
+{% block content %}
+<section >
+    <div class="container mt-3">
+        <div class = "row justify-content-centre">
+            <div class = "col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit" class = "btn btn-success"> Add </button>
+                        <script>
+                            var name = "{{ user.username }}";
+                            document.getElementById("elder").value = name;
+                        </script>
+                    </form>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

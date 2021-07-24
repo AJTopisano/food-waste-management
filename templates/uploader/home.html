@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="with=device-width,initial-scale=1.0">
+    <title>FOOD WASTE MANAGEMENT SYSTEM</title>
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+    <link rel="stylesheet" href="{% static '/css/bootstrap.css' %}">
+</head>
+<body>
+  <section class="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'posting' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse ms-auto" >
+            <div class="navbar-nav ">
+            
+            {% if request.user.is_authenticated %}
+                <a class="nav-item nav-link" href="">{{request.user}}</a>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+            <a class="nav-item nav-link " href="#section1">Our Mission</a>
+            <a class="nav-link" href="#about"#>About Us</a>
+            <a class="nav-link" href="#contact"#>Contact</a>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .topde
+        {
+        background-image:url('{% static "/images/share3.jpg" %}');
+        background-size:100%;
+        }
+        .centerr{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        </style>
+<img src="{% static '/images/share3.jpg' %}"class = "centerr">
+<div class="text-box">
+    <cav>
+    <div class="topdev">
+    </cav>
+    <font color="black">
+    <h1><mark style="background-color: white;">Feed the Hungry</mark></h1>
+    <p><mark style="background-color: white;">"If you can't feed HUNDRED ,then feed just ONE"</mark></p>
+    <a href=""class="hero-btn">Visit us to know more</a>
+</font>
+</nav>
+</div>
+
+  </section>
+<!---------ABOUT US-------->
+<section class="about", id="about">
+   <bav>
+    <a href="index.html"><img src="{% static '/images/share.jpg' %}"></a>
+    <h1><B>ABOUT US</B></h1>
+      <p>* In India,nearly about 1000 people sleep without food who are really unfortunate to get food.<br>
+         *<B> Our main aim</B> is to stop hunger and provide them with food.<br>
+         * This website is created to help the poor needy people.<br>
+         * It may cause diseases like Starvation,Malnutrition etc.<br></p>
+    </bav>    
+</section>
+
+<!---------MISSION---------->
+<div id="section1">
+<section class="mission">
+    <h1><B>OUR MISSION</B></h1>
+    <p>1.<B>"NO FOOD WASTE"</B> is a mission to end food waste and hunger to make the <B>"WORLD HUNGRY FREE"</B>.<br>
+       2.To provide free food to poor,homeless and where there are hungry stomachs.<br>
+       3.To provide unconditional help to the poor people and needy to the society.<br>
+       4.To provide poor on streets,destitute homes,orphanages,old age homes.<br>
+       5.To reduce food wastage and be circulated among the needy people.<br>
+          </p>
+</section>
+</div>
+<!----------CONTACT------------>
+<section class="contact" id="contact">
+       
+<div align="center">
+<font color="white">
+<h3>
+Contact:<br>
+Meghana</br>
+Email ID:meghana.koratpally@gmail.com<br>
+WhatsApp:7032393304</h2>
+</font>
+</body>
+</section>
+
+
+<!---------JAVASCRIPT FOR TOGGLE MENU----------->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static '/js/bootstrap.js' %}"></script>
+<script>
+       var navLinks=document.getElementById("navLinks");
+       function showMenu(){
+                   navLinks.style.right="0";
+       }
+       function hideMenu(){
+                   navLinks.style.right="-200px";
+       }       
+</script>
+</body>
+</html>

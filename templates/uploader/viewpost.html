@@ -1,0 +1,32 @@
+{% extends 'uploader/index.html' %}
+{% block title %}
+    Post
+{% endblock title %}
+
+{% block content %}
+
+<section >
+    <div class="container mt-3">
+        <div class = "row justify-content-centre">
+            <div class = "col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <label><strong>Title: </strong></label>
+                        {{post.name}}
+                        <br>
+                        <label><strong>Description: </strong></label>
+                        {{post.description}}
+                        <br>
+                        <label><strong>Location: </strong></label>
+                        {{post.location}}
+                        <br>
+                        <label><strong>Contact: </strong></label>
+                        {{post.phone}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

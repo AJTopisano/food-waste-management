@@ -1,0 +1,1 @@
+web: gunicorn foodwastemanagement.wsgi --log-file -
